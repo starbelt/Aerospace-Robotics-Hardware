@@ -34,7 +34,7 @@ plt.figure(figsize=(8, 6))
 plt.plot(df_xz['Position X'], df_xz['Position Z'], marker='o', markersize=2, linewidth=1, color='green')
 plt.xlabel('Position X (meters)')
 plt.ylabel('Position Z (meters)')
-plt.title('Crazyflie 2D Flight Path (X vs Z)')
+plt.title('2D Flight Path (X vs Z)')
 plt.grid(True)
 plt.axis('equal')  # keeps aspect ratio square
 plt.tight_layout()
