@@ -31,7 +31,7 @@ df_xz = df_xz.astype(float)
 
 # Plotting X vs Z
 plt.figure(figsize=(8, 6))
-plt.plot(df_xz['Position X'], df_xz['Position Z'], marker='o', markersize=2, linewidth=1, color='green')
+plt.plot(df_xz['Position X'], df_xz['Position Z'], marker='o', markersize=2, linestyle='None')
 plt.xlabel('Position X (meters)')
 plt.ylabel('Position Z (meters)')
 plt.title('2D Flight Path (X vs Z)')
