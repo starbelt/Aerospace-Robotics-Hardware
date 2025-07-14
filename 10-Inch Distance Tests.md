@@ -18,4 +18,3 @@ clear image from the drone. I measured the distance with the same process as the
 
 ![Distance test2 distance1](Images/distance_t2d1.png)    
  
-![Propeller connection](Images/propeller.jpg) 

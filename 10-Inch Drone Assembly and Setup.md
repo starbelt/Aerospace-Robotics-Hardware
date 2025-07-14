@@ -43,4 +43,6 @@ once the battery was depleted I waited for it to cool down. After a couple of mi
 <br><br>
 
 I configured the on-screen display through the beta flight configurator. I first picked the setting I wanted to appear in, and then I placed them in an appropriate spot. Once I picked the correct video format and saved all, I needed to do was set up the goggles. First, I connected the antennas to the drone. AFter that, I looked through the various channels and bands in order to find the ones that matched the video transmitter. Once I found the matches, I could see through the drone camera with the goggles. In the on-screen display of the goggles, I could also see all the settings. I had to edit them in order to make them fit into the screen. The settings I decided to include are altitude, artificial horizon, artificial horizon sidebars, battery average cell voltage, battery current draw, battery current mAh drawn, compass bar, link quality, throttle position, timer 1, and the vtx channel.    
-![10inch drone stage1](Images/10inch_drone_stage12.jpg)
+![10inch drone stage1](Images/10inch_drone_stage12.jpg)  
+
+![Propeller connection](Images/propeller.jpg) 
