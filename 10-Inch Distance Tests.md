@@ -16,5 +16,6 @@ began to walk away. Although initially there were some problems with the colors 
 clear image from the drone. I measured the distance with the same process as the first test and concluded the distance was around 275 meters. I will have to redo the 800mw test at a new location to test the limit of the 
 800mw range.  
 
-![Distance test2 distance1](Images/distance_t2d1.png)  
+![Distance test2 distance1](Images/distance_t2d1.png)    
  
+![Propeller connection](Images/propeller.jpg) 
