@@ -1,49 +1,77 @@
-import logging
 import time
-import sys
-from threading import Event
+import csv
+import logging
+from datetime import datetime
 
 import cflib.crtp
 from cflib.crazyflie import Crazyflie
 from cflib.crazyflie.syncCrazyflie import SyncCrazyflie
-from cflib.positioning.motion_commander import MotionCommander
+from cflib.crazyflie.log import LogConfig
 
+# Setup
 URI = 'radio://0/80/2M'
+LOG_DURATION = 10  # seconds
 
-# Default height for takeoff
-DEFAULT_HEIGHT = 0.5
+# Timestamp for CSV
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+csv_filename = f"log_{timestamp}.csv"
 
-# For detecting the Flow deck (optional but safe)
-deck_attached_event = Event()
+# Variables to log
+LOG_VARS = [
+    ('pm.vbat', 'float'),
+    ('stabilizer.roll', 'float'),
+    ('stabilizer.pitch', 'float'),
+    ('stabilizer.yaw', 'float')
+]
 
-def param_deck_attached(name, value_str):
-    if int(value_str) == 1:
-        deck_attached_event.set()
+# Logging setup
+logging.basicConfig(level=logging.ERROR)
+cflib.crtp.init_drivers()
 
-def take_off_simple(scf):
-    with MotionCommander(scf, default_height=DEFAULT_HEIGHT) as mc:
-        print("Taking off and hovering...")
-        time.sleep(3)  # Hover for 3 seconds
-        mc.stop()
-        print("Landing...")
+
+def log_and_save(scf):
+    with open(csv_filename, mode='w', newline='') as csv_file:
+        writer = csv.writer(csv_file)
+        writer.writerow(['Time (ms)', 'Battery (V)', 'Roll (°)', 'Pitch (°)', 'Yaw (°)'])
+
+        log_config = LogConfig(name='Logging', period_in_ms=100)
+        for var, var_type in LOG_VARS:
+            log_config.add_variable(var, var_type)
+
+        start_time = time.time()
+
+        def log_callback(timestamp, data, _):
+            row = [
+                timestamp,
+                data['pm.vbat'],
+                data['stabilizer.roll'],
+                data['stabilizer.pitch'],
+                data['stabilizer.yaw']
+            ]
+            print(row)
+            writer.writerow(row)
+
+        def log_error_callback(_log_conf, msg):
+            print("Log error:", msg)
+
+        log_config.data_received_cb.add_callback(log_callback)
+        log_config.error_cb.add_callback(log_error_callback)
+
+        scf.cf.log.add_config(log_config)
+        log_config.start()
+        print("Logging started...")
+
+        # Wait for logging duration
+        while time.time() - start_time < LOG_DURATION:
+            time.sleep(0.1)
+
+        log_config.stop()
+        print(f"Logging stopped. Data saved to {csv_filename}")
+
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.ERROR)
-
-    cflib.crtp.init_drivers()
-
+    print("Connecting to Crazyflie...")
     cf = Crazyflie(rw_cache='./cache')
-    cf.param.add_update_callback(group='deck', name='bcFlow2', cb=param_deck_attached)
-
-    print("Connecting...")
 
     with SyncCrazyflie(URI, cf=cf) as scf:
-        if not deck_attached_event.wait(timeout=5):
-            print("No flow deck detected!")
-            sys.exit(1)
-
-        # Arm the Crazyflie
-        scf.cf.platform.send_arming_request(True)
-        time.sleep(1.0)
-
-        take_off_simple(scf)
+        log_and_save(scf)
