@@ -1,6 +1,7 @@
 import time
 import csv
 import logging
+import os
 from datetime import datetime
 
 import cflib.crtp
@@ -12,9 +13,10 @@ from cflib.crazyflie.log import LogConfig
 URI = 'radio://0/80/2M'
 LOG_DURATION = 10  # seconds
 
-# Timestamp for CSV
+# Automatically generate CSV path in Downloads folder
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-csv_filename = f"log_{timestamp}.csv"
+downloads_folder = os.path.join(os.path.expanduser("~"), "Downloads")
+csv_filename = os.path.join(downloads_folder, f"log_{timestamp}.csv")
 
 # Variables to log
 LOG_VARS = [
@@ -61,12 +63,11 @@ def log_and_save(scf):
         log_config.start()
         print("Logging started...")
 
-        # Wait for logging duration
         while time.time() - start_time < LOG_DURATION:
             time.sleep(0.1)
 
         log_config.stop()
-        print(f"Logging stopped. Data saved to {csv_filename}")
+        print(f"Logging complete. File saved to:\n{csv_filename}")
 
 
 if __name__ == '__main__':
