@@ -51,3 +51,5 @@ The next step was to set up the CrazyRadio. The first time I plugged in the radi
 Lastly I needed to install the driver for the CrazyRadio. I installed zadiq, the link to install can be found on the "Installing USB Driver on Windows page". You need to make sure to choose the "libusb-win32" option.
 ![Crazyflie software3](Images/crazyflie_software3.png) 
 <br><br>
+
+conda activate C:\Users\Rikar\anaconda3\envs\crazyflie-env
