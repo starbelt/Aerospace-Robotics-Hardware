@@ -1,74 +1,77 @@
 import time
 import csv
+import logging
 from datetime import datetime
+
 import cflib.crtp
 from cflib.crazyflie import Crazyflie
+from cflib.crazyflie.syncCrazyflie import SyncCrazyflie
 from cflib.crazyflie.log import LogConfig
 
-# Init drivers
-cflib.crtp.init_drivers()
+# Setup
+URI = 'radio://0/80/2M'
+LOG_DURATION = 10  # seconds
 
-uri = 'radio://0/80/2M'
-cf = Crazyflie()
-
-# File setup
+# Timestamp for CSV
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 csv_filename = f"log_{timestamp}.csv"
-csv_file = open(csv_filename, mode='w', newline='')
-writer = csv.writer(csv_file)
-writer.writerow(['Time (ms)', 'Battery (V)', 'Roll (°)', 'Pitch (°)', 'Yaw (°)'])
 
-# This will be set after logging starts
-log_config = None
-start_time = None
+# Variables to log
+LOG_VARS = [
+    ('pm.vbat', 'float'),
+    ('stabilizer.roll', 'float'),
+    ('stabilizer.pitch', 'float'),
+    ('stabilizer.yaw', 'float')
+]
 
-def log_callback(timestamp, data, logconf):
-    global start_time
-    if start_time is None:
+# Logging setup
+logging.basicConfig(level=logging.ERROR)
+cflib.crtp.init_drivers()
+
+
+def log_and_save(scf):
+    with open(csv_filename, mode='w', newline='') as csv_file:
+        writer = csv.writer(csv_file)
+        writer.writerow(['Time (ms)', 'Battery (V)', 'Roll (°)', 'Pitch (°)', 'Yaw (°)'])
+
+        log_config = LogConfig(name='Logging', period_in_ms=100)
+        for var, var_type in LOG_VARS:
+            log_config.add_variable(var, var_type)
+
         start_time = time.time()
 
-    row = [
-        timestamp,
-        data['pm.vbat'],
-        data['stabilizer.roll'],
-        data['stabilizer.pitch'],
-        data['stabilizer.yaw']
-    ]
-    print(f"{row}")
-    writer.writerow(row)
+        def log_callback(timestamp, data, _):
+            row = [
+                timestamp,
+                data['pm.vbat'],
+                data['stabilizer.roll'],
+                data['stabilizer.pitch'],
+                data['stabilizer.yaw']
+            ]
+            print(row)
+            writer.writerow(row)
 
-    # Stop logging after 10 seconds
-    if time.time() - start_time > 10:
-        print("Stopping log...")
-        logconf.stop()
-        csv_file.close()
-        print(f"Log saved to {csv_filename}")
-        cf.close_link()
+        def log_error_callback(_log_conf, msg):
+            print("Log error:", msg)
 
-def connected(link_uri):
-    global log_config
-    print("Connected – starting log")
-    log_config = LogConfig(name='Log', period_in_ms=100)
-    log_config.add_variable('pm.vbat', 'float')
-    log_config.add_variable('stabilizer.roll', 'float')
-    log_config.add_variable('stabilizer.pitch', 'float')
-    log_config.add_variable('stabilizer.yaw', 'float')
+        log_config.data_received_cb.add_callback(log_callback)
+        log_config.error_cb.add_callback(log_error_callback)
 
-    cf.log.add_config(log_config)
-    log_config.data_received_cb.add_callback(log_callback)
-    log_config.start()
-    print("Logging...")
+        scf.cf.log.add_config(log_config)
+        log_config.start()
+        print("Logging started...")
 
-def connection_failed(link_uri, msg): print("Failed:", msg)
-def connection_lost(link_uri, msg): print("Lost:", msg)
+        # Wait for logging duration
+        while time.time() - start_time < LOG_DURATION:
+            time.sleep(0.1)
 
-cf.connected.add_callback(connected)
-cf.connection_failed.add_callback(connection_failed)
-cf.connection_lost.add_callback(connection_lost)
+        log_config.stop()
+        print(f"Logging stopped. Data saved to {csv_filename}")
 
-print("Connecting...")
-cf.open_link(uri)
 
-# Block until disconnected
-while cf.is_connected():
-    time.sleep(0.1)
+if __name__ == '__main__':
+    print("Connecting to Crazyflie...")
+    cf = Crazyflie(rw_cache='./cache')
+
+    with SyncCrazyflie(URI, cf=cf) as scf:
+        log_and_save(scf)
