@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 if len(sys.argv) != 2:
     sys.exit()
-    
+
 folder_path = sys.argv[1]
 
 # Get all .csv files in the folder
@@ -22,17 +22,16 @@ for i, file in enumerate(csv_files):
 
     try:
         df = pd.read_csv(file_path, skiprows=5)
-        df_xz = df[['Unnamed: 1', 'Position', 'Position.1']].copy()
-        df_xz.columns = ['Time (s)', 'Position X', 'Position Z']
+        df_ty = df[['Unnamed: 1', 'Position.2']].copy()
+        df_ty.columns = ['Time (s)', 'Position Y']
 
-        df_xz = df_xz.dropna()
-        df_xz = df_xz[
-            pd.to_numeric(df_xz['Time (s)'], errors='coerce').notnull() &
-            pd.to_numeric(df_xz['Position X'], errors='coerce').notnull() &
-            pd.to_numeric(df_xz['Position Z'], errors='coerce').notnull()
+        df_ty = df_ty.dropna()
+        df_ty = df_ty[
+            pd.to_numeric(df_ty['Time (s)'], errors='coerce').notnull() &
+            pd.to_numeric(df_ty['Position Y'], errors='coerce').notnull()
         ].astype(float)
 
-        plt.plot(df_xz['Position X'], df_xz['Position Z'],
+        plt.plot(df_ty['Time (s)'], df_ty['Position Y'],
                  marker='o', markersize=2, linestyle='None',
                  label=file, color=colors(i))
 
@@ -40,11 +39,10 @@ for i, file in enumerate(csv_files):
         print(f"Skipping {file}: {e}")
 
 # Finish plot
-plt.xlabel('Position Z (m)')
+plt.xlabel('Time (s)')
 plt.ylabel('Position Y (m)')
-plt.title('2D Flight Paths (X vs Z)')
+plt.title('Flight Altitude Over Time')
 plt.legend()
-plt.axis('equal')
 plt.grid(True)
 plt.tight_layout()
 plt.show()
