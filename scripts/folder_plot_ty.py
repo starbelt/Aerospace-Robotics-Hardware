@@ -22,7 +22,7 @@ for i, file in enumerate(csv_files):
 
     try:
         df = pd.read_csv(file_path, skiprows=5)
-        df_ty = df[['Unnamed: 1', 'Position.2']].copy()
+        df_ty = df[['Unnamed: 1', 'Position.1']].copy()
         df_ty.columns = ['Time (s)', 'Position Y']
 
         df_ty = df_ty.dropna()
