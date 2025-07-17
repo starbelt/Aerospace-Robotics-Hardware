@@ -18,24 +18,22 @@ else:
 # Load the CSV file using the full path
 df = pd.read_csv(data_file, skiprows=5)
 
-# Extract the Time, Position X, and Position Z columns
-df_xy = df[['Unnamed: 1', 'Unnamed: 1', 'Position.1']].copy()
-df_xy.columns = ['Time (s)', 'Position X', 'Position Y']
+# Extract the Time and Position Y columns
+df_ty = df[['Unnamed: 1', 'Position.1']].copy()
+df_ty.columns = ['Time (s)', 'Position Y']
 
 # Clean the data: drop missing and non-numeric values
-df_xy = df_xy.dropna()
-df_xy = df_xy[pd.to_numeric(df_xy['Time (s)'], errors='coerce').notnull()]
-df_xy = df_xy[pd.to_numeric(df_xy['Position X'], errors='coerce').notnull()]
-df_xy = df_xy[pd.to_numeric(df_xy['Position Y'], errors='coerce').notnull()]
-df_xy = df_xy.astype(float)
+df_ty = df_ty.dropna()
+df_ty = df_ty[pd.to_numeric(df_ty['Time (s)'], errors='coerce').notnull()]
+df_ty = df_ty[pd.to_numeric(df_ty['Position Y'], errors='coerce').notnull()]
+df_ty = df_ty.astype(float)
 
-# Plotting X vs Y
+# Plotting Time vs Y
 plt.figure(figsize=(8, 6))
-plt.plot(df_xy['Position X'], df_xy['Position Y'], marker='o', markersize=2, linestyle='None')
-plt.xlabel('Position X (meters)')
+plt.plot(df_ty['Time (s)'], df_ty['Position Y'], marker='o', markersize=2, linestyle='None')
+plt.xlabel('Time (seconds)')
 plt.ylabel('Position Y (meters)')
-plt.title('2D Flight Path (X vs Y)')
+plt.title('Flight Altitude Over Time')
 plt.grid(True)
-plt.axis('equal')  # keeps aspect ratio square
 plt.tight_layout()
 plt.show()
