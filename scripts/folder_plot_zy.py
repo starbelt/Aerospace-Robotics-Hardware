@@ -22,7 +22,7 @@ for i, file in enumerate(csv_files):
 
     try:
         df = pd.read_csv(file_path, skiprows=5)
-        df_xz = df[['Unnamed: 1', 'Position', 'Position.1']].copy()
+        df_xz = df[['Unnamed: 1', 'Position.2', 'Position.1']].copy()
         df_xz.columns = ['Time (s)', 'Position X', 'Position Z']
 
         df_xz = df_xz.dropna()
@@ -40,7 +40,7 @@ for i, file in enumerate(csv_files):
         print(f"Skipping {file}: {e}")
 
 # Finish plot
-plt.xlabel('Position X (m)')
+plt.xlabel('Position Z (m)')
 plt.ylabel('Position Y (m)')
 plt.title('2D Flight Paths (X vs Z)')
 plt.legend()
