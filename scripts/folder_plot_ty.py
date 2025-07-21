@@ -46,6 +46,7 @@ plt.legend()
 plt.grid(True)
 plt.tight_layout()
 
-plt.savefig("plot.pdf", format='pdf', bbox_inches='tight', dpi=300)
+plt.savefig("C:/Users/Rikar/Documents/plot.pdf", format='pdf', bbox_inches='tight', dpi=300)
+
 
 plt.show()
