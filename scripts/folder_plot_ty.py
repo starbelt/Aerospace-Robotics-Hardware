@@ -45,4 +45,7 @@ plt.title('Flight Altitude Over Time')
 plt.legend()
 plt.grid(True)
 plt.tight_layout()
+
+plt.savefig("plot.pdf", format='pdf', bbox_inches='tight', dpi=300)
+
 plt.show()
