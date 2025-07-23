@@ -40,9 +40,9 @@ for i, file in enumerate(csv_files):
         print(f"Skipping {file}: {e}")
 
 # Finish plot
-plt.xlabel('Position Z (m)')
+plt.xlabel('Position X (m)')
 plt.ylabel('Position Y (m)')
-plt.title('2D Flight Paths (X vs Z)')
+plt.title('2D Flight Paths (X vs Y)')
 plt.legend()
 plt.axis('equal')
 plt.grid(True)
