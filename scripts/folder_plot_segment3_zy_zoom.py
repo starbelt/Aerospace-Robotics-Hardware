@@ -49,7 +49,7 @@ plt.ylim(750, 950)
 
 plt.tight_layout()
 
-# Save as PDF (respects zoom now)
+# Save as PDF — no tight bounding box
 plt.savefig("C:/Users/Rikar/git-repos/Aerospace-Robotics-Hardware/plots/plot.pdf",
             format='pdf', dpi=300)
 
