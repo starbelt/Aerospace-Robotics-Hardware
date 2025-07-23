@@ -15,7 +15,7 @@ csv_files = [f for f in os.listdir(folder_path) if f.endswith('.csv')]
 colors = plt.cm.get_cmap('tab10', len(csv_files))
 
 # Create plot
-plt.figure(figsize=(8, 6))
+plt.figure(figsize=(12, 6))
 
 for i, file in enumerate(csv_files):
     file_path = os.path.join(folder_path, file)
@@ -42,10 +42,10 @@ for i, file in enumerate(csv_files):
 plt.xlabel('Time (s)')
 plt.ylabel('Position Y (m)')
 plt.title('Flight Altitude Over Time')
-plt.legend()
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)  # Legend to the right
 plt.grid(True)
 plt.tight_layout()
 
-plt.savefig("C:/Users/Rikar/git-repos/Aerospace-Robotics-Hardware/plots/plot.pdf", format='pdf', bbox_inches='tight', dpi=300)
-
+plt.savefig("C:/Users/Rikar/git-repos/Aerospace-Robotics-Hardware/plots/plot.pdf",
+            format='pdf', bbox_inches='tight', dpi=300)
 plt.show()

@@ -15,7 +15,7 @@ csv_files = [f for f in os.listdir(folder_path) if f.endswith('.csv')]
 colors = plt.cm.get_cmap('tab10', len(csv_files))
 
 # Create plot
-plt.figure(figsize=(8, 6))
+plt.figure(figsize=(12, 6))
 
 for i, file in enumerate(csv_files):
     file_path = os.path.join(folder_path, file)
@@ -43,7 +43,7 @@ for i, file in enumerate(csv_files):
 plt.xlabel('Position X (m)')
 plt.ylabel('Position Z (m)')
 plt.title('2D Flight Paths (X vs Z)')
-plt.legend()
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)  # Legend to the right
 plt.axis('equal')
 plt.grid(True)
 plt.tight_layout()
