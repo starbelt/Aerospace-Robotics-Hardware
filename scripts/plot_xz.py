@@ -38,5 +38,8 @@ plt.title('2D Flight Path (X vs Z)')
 plt.grid(True)
 plt.axis('equal')  # keeps aspect ratio square
 plt.tight_layout()
+
+plt.savefig("C:/Users/Rikar/git-repos/Aerospace-Robotics-Hardware/plots/plot.pdf", format='pdf', bbox_inches='tight', dpi=300)
+
 plt.show()
 

@@ -47,4 +47,7 @@ plt.legend()
 plt.axis('equal')
 plt.grid(True)
 plt.tight_layout()
+
+plt.savefig("C:/Users/Rikar/git-repos/Aerospace-Robotics-Hardware/plots/plot.pdf", format='pdf', bbox_inches='tight', dpi=300)
+
 plt.show()
