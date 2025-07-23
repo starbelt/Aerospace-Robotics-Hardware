@@ -19,17 +19,17 @@ for file in csv_files:
         file_path = os.path.join(folder_path, file)
         df = pd.read_csv(file_path, skiprows=5)
 
-        # Extract Body 1 Z and Y
+        # Extract segment1 Z and Y
         segment1 = df[['Position.2', 'Position.1']].copy()
         segment1 = segment1.apply(pd.to_numeric, errors='coerce').dropna()
 
-        # ❗ Skip every 10th point
+        # Skip every 10th point
         segment1 = segment1.reset_index(drop=True)
         segment1 = segment1.drop(segment1.index[::10])
 
         # Plot
         plt.plot(segment1['Position.2'], segment1['Position.1'],
-                 marker='o', markersize=.5, linestyle='-', label=f'{file} - Body 1')
+                 marker='o', markersize=.5, linestyle='none', label=f'{file} - Body 1')
 
     except Exception as e:
         print(f"Skipping {file}: {e}")
