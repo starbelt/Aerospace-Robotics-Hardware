@@ -29,7 +29,8 @@ for file in csv_files:
 
         # Plot
         plt.plot(segment3['Position.32'], segment3['Position.31'],
-                 marker='o', markersize=.5, linestyle='--', linewidth=.5, label=f'{file} - segment 3')
+                 marker='o', markersize=0.5, linestyle='--', linewidth=0.5,
+                 label=f'{file} - segment 3')
 
     except Exception as e:
         print(f"Skipping {file}: {e}")
@@ -38,16 +39,18 @@ for file in csv_files:
 plt.xlabel('Position Z (mm)')
 plt.ylabel('Position Y (mm)')
 plt.title('2D Trajectory of Follower Arm Segment 3')
-plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)  # Legend to the right
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
 plt.axis('equal')
 plt.grid(True)
-plt.tight_layout()
 
-# Save as PDF
-plt.savefig("C:/Users/Rikar/git-repos/Aerospace-Robotics-Hardware/plots/plot.pdf",
-            format='pdf', bbox_inches='tight', dpi=300)
-
+# Set zoom limits BEFORE saving
 plt.xlim(550, 600)
 plt.ylim(750, 950)
+
+plt.tight_layout()
+
+# Save as PDF (respects zoom now)
+plt.savefig("C:/Users/Rikar/git-repos/Aerospace-Robotics-Hardware/plots/plot.pdf",
+            format='pdf', dpi=300)
 
 plt.show()
