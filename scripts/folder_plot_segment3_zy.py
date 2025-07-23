@@ -20,7 +20,7 @@ for file in csv_files:
         df = pd.read_csv(file_path, skiprows=5)
 
         # Extract segment3 Z and Y
-        segment3 = df[['Position.17', 'Position.16']].copy()
+        segment3 = df[['Position.32', 'Position.31']].copy()
         segment3 = segment3.apply(pd.to_numeric, errors='coerce').dropna()
 
         # Skip every 10th point
