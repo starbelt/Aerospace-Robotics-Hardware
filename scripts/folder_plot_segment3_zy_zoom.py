@@ -12,7 +12,7 @@ folder_path = sys.argv[1]
 csv_files = [f for f in os.listdir(folder_path) if f.endswith('.csv')]
 csv_files.sort()
 
-plt.figure(figsize=(10, 8))
+fig, ax = plt.subplots(figsize=(10, 8))
 
 for file in csv_files:
     try:
@@ -28,28 +28,29 @@ for file in csv_files:
         segment3 = segment3.drop(segment3.index[::10])
 
         # Plot
-        plt.plot(segment3['Position.32'], segment3['Position.31'],
-                 marker='o', markersize=0.5, linestyle='--', linewidth=0.5,
-                 label=f'{file} - segment 3')
+        ax.plot(segment3['Position.32'], segment3['Position.31'],
+                marker='o', markersize=0.5, linestyle='--', linewidth=0.5,
+                label=f'{file} - segment 3')
 
     except Exception as e:
         print(f"Skipping {file}: {e}")
 
+# Set zoom limits BEFORE tight layout
+ax.set_xlim(550, 600)
+ax.set_ylim(750, 950)
+
 # Finalize plot
-plt.xlabel('Position Z (mm)')
-plt.ylabel('Position Y (mm)')
-plt.title('2D Trajectory of Follower Arm Segment 3')
-plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
-plt.axis('equal')
-plt.grid(True)
+ax.set_xlabel('Position Z (mm)')
+ax.set_ylabel('Position Y (mm)')
+ax.set_title('2D Trajectory of Follower Arm Segment 3')
+ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+ax.axis('equal')
+ax.grid(True)
 
-# Set zoom limits BEFORE saving
-plt.xlim(550, 600)
-plt.ylim(750, 950)
-
+# Apply layout last
 plt.tight_layout()
 
-# Save as PDF — no tight bounding box
+# Save to PDF (no bbox_inches, no cropping)
 plt.savefig("C:/Users/Rikar/git-repos/Aerospace-Robotics-Hardware/plots/plot.pdf",
             format='pdf', dpi=300)
 
