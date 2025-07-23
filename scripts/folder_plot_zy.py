@@ -42,7 +42,7 @@ for i, file in enumerate(csv_files):
 # Finish plot
 plt.xlabel('Position Z (m)')
 plt.ylabel('Position Y (m)')
-plt.title('2D Flight Paths (X vs Z)')
+plt.title('2D Flight Paths (Z vs Y)')
 plt.legend()
 plt.axis('equal')
 plt.grid(True)
