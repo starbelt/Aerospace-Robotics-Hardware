@@ -29,7 +29,7 @@ for file in csv_files:
 
         # Plot
         plt.plot(segment1['Position.2'], segment1['Position.1'],
-                 marker='o', markersize=.5, linestyle='none', label=f'{file} - Body 1')
+                 marker='o', markersize=.5, linestyle='none', label=f'{file} - segment 1')
 
     except Exception as e:
         print(f"Skipping {file}: {e}")
@@ -37,7 +37,7 @@ for file in csv_files:
 # Finalize plot
 plt.xlabel('Position Z (mm)')
 plt.ylabel('Position Y (mm)')
-plt.title('2D Trajectory of Follower Arm Segment 3(Zoomed In)')
+plt.title('2D Trajectory of Follower Arm Segment 1')
 plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)  # Legend to the right
 plt.axis('equal')
 plt.grid(True)
