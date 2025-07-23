@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 if len(sys.argv) != 2:
     sys.exit()
-    
+
 folder_path = sys.argv[1]
 
 # Get all .csv files in the folder
@@ -14,8 +14,8 @@ csv_files = [f for f in os.listdir(folder_path) if f.endswith('.csv')]
 # Setup colormap
 colors = plt.cm.get_cmap('tab10', len(csv_files))
 
-# Create plot
-plt.figure(figsize=(8, 6))
+# Create a wider plot to fit the legend on the side
+plt.figure(figsize=(12, 6))  # Increased width
 
 for i, file in enumerate(csv_files):
     file_path = os.path.join(folder_path, file)
@@ -43,11 +43,13 @@ for i, file in enumerate(csv_files):
 plt.xlabel('Position X (m)')
 plt.ylabel('Position Y (m)')
 plt.title('2D Flight Paths (X vs Y)')
-plt.legend()
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)  # Legend to the right
 plt.axis('equal')
 plt.grid(True)
 plt.tight_layout()
 
-plt.savefig("C:/Users/Rikar/git-repos/Aerospace-Robotics-Hardware/plots/plot.pdf", format='pdf', bbox_inches='tight', dpi=300)
+# Save as PDF
+plt.savefig("C:/Users/Rikar/git-repos/Aerospace-Robotics-Hardware/plots/plot.pdf",
+            format='pdf', bbox_inches='tight', dpi=300)
 
 plt.show()
