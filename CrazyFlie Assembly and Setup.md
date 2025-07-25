@@ -52,6 +52,8 @@ Lastly I needed to install the driver for the CrazyRadio. I installed zadiq, the
 ![Crazyflie software3](Images/crazyflie_software3.png) 
 <br><br>
 
+conda activate C:\Users\Rikar\anaconda3\envs\crazyflie-env
+
 
 cd C:\Users\Rikar\Downloads\crazyflie-clients-python
 .\venv\Scripts\activate
