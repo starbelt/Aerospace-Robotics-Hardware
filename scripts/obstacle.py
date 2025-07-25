@@ -132,7 +132,23 @@ def fly_square(scf):
         move_to_position(mc, 0.0, 1.0)
         move_to_position(mc, 0.0, 0.0)
 
-        print("Landing...")
+def t1_t4(scf):
+    with MotionCommander(scf, default_height=DEFAULT_HEIGHT) as mc:
+        print("Taking off...")
+        time.sleep(2.0)
+
+        # Reset estimated position to (0, 0)
+        scf.cf.param.set_value('kalman.resetEstimation', '1')
+        time.sleep(0.1)
+        scf.cf.param.set_value('kalman.resetEstimation', '0')
+        time.sleep(2.0)
+
+        # Move in a 1-meter square (clockwise)
+        move_to_position(mc, 1.0, 0.0)
+        move_to_position(mc, 1.0, 1.0)
+        move_to_position(mc, 0.0, 1.0)
+        move_to_position(mc, 0.0, 0.0)
+
 
 def take_off_simple(scf):
     with MotionCommander(scf, default_height=DEFAULT_HEIGHT) as mc:
@@ -167,7 +183,8 @@ if __name__ == '__main__':
         time.sleep(1.0)
 
         #fly_square(scf)
-        take_off_simple(scf)
+        #take_off_simple(scf)
+        t1_t4
 
         log_conf.stop()
         csv_file.close()
