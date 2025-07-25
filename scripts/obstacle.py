@@ -132,6 +132,8 @@ def fly_square(scf):
         move_to_position(mc, 0.0, 1.0)
         move_to_position(mc, 0.0, 0.0)
 
+        print("Landing...")
+
 def t1_t4(scf):
     with MotionCommander(scf, default_height=DEFAULT_HEIGHT) as mc:
         print("Taking off...")
@@ -149,6 +151,7 @@ def t1_t4(scf):
         move_to_position(mc, 0.0, 1.0)
         move_to_position(mc, 0.0, 0.0)
 
+        print("Landing...")
 
 def take_off_simple(scf):
     with MotionCommander(scf, default_height=DEFAULT_HEIGHT) as mc:
@@ -183,8 +186,7 @@ if __name__ == '__main__':
         time.sleep(1.0)
 
         #fly_square(scf)
-        #take_off_simple(scf)
-        t1_t4
+        take_off_simple(scf)
 
         log_conf.stop()
         csv_file.close()
