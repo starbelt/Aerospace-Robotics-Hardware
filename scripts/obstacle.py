@@ -186,7 +186,8 @@ if __name__ == '__main__':
         time.sleep(1.0)
 
         #fly_square(scf)
-        take_off_simple(scf)
+        #take_off_simple(scf)
+        t1_t4(scf)
 
         log_conf.stop()
         csv_file.close()
