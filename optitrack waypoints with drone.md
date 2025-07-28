@@ -72,4 +72,4 @@ changed optitrack to optitrac_closed_source
 
 still having issues with ip address
 
-![alt text](image-1.png)
+![alt text](image-1.png) 
