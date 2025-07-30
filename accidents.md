@@ -14,7 +14,7 @@ As a result a part of the buck conveter sparked and popped. It left visible dama
 ![alt text](IMG_2956.jpg)  
 
 For the second set up I looked at the datasheet for the buck converter and followed the provided wiring diagram.
-![alt text](image-10.png)
-I connevetd the sense + and sense - pins to Vo+ and Vo- respectivly. I also connected the on/off pin to the -vin pin.
+![alt text](image-10.png)  
+I connected the sense + and sense - pins to Vo+ and Vo- respectivly. I also connected the on/off pin to the -vin pin.
 
 ![alt text](image-9.png)
