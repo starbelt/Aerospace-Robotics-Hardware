@@ -66,7 +66,6 @@ was flashing firmware incorreclty
 
 nothing would happen in the example code
 
-[example code](=https://github.com/bitcraze/crazyflie-lib-python/tree/master/examples/mocap)
 
 changed optitrack to optitrac_closed_source
 

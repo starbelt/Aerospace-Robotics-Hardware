@@ -18,3 +18,5 @@ For the second set up I looked at the datasheet for the buck converter and follo
 I connected the sense + and sense - pins to Vo+ and Vo- respectivly. I also connected the on/off pin to the -vin pin.
 
 ![alt text](image-9.png)
+
+![alt text](image-12.png)
