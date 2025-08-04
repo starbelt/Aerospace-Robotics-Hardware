@@ -52,5 +52,9 @@ reboot
 
 motortest 1 0 20 2
 
+arm throttle 
+
+disarm throttle
+
 
 

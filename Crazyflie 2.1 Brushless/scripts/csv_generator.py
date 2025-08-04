@@ -5,6 +5,9 @@ import csv
 movements = [
     ('x', +1),
     ('y', +1),
+    ('x', -1),
+    ('y', -1),
+
 ]
 
 output_file = 'generated_path.csv'
