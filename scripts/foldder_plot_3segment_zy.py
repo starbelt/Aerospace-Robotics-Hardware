@@ -18,8 +18,8 @@ for file in csv_files:
         df = pd.read_csv(file_path, skiprows=5)
 
         # Clean and extract X/Y for 3 segments
-        segment1 = df[['Position.2', 'Position.1']].copy()
-        segment2 = df[['Position.17', 'Position.16']].copy()
+        segment1 = df[['Position', 'Position.2']].copy()
+        segment2 = df[['Position.15', 'Position.17']].copy()
         segment3 = df[['Position.32', 'Position.31']].copy()
 
         segment1 = segment1.apply(pd.to_numeric, errors='coerce').dropna()

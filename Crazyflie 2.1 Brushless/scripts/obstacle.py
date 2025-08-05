@@ -145,11 +145,7 @@ def t1_t4(scf):
         scf.cf.param.set_value('kalman.resetEstimation', '0')
         time.sleep(2.0)
 
-        # Move in a 1-meter square (clockwise)
-        move_to_position(mc, 1.0, 0.0)
-        move_to_position(mc, 1.0, 1.0)
-        move_to_position(mc, 0.0, 1.0)
-        move_to_position(mc, 0.0, 0.0)
+        move_to_position(mc, 1.0, -1.0)
 
         print("Landing...")
 
