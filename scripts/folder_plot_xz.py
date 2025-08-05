@@ -33,7 +33,7 @@ for i, file in enumerate(csv_files):
         ].astype(float)
 
         plt.plot(df_xz['Position X'], df_xz['Position Z'],
-                 marker='o', markersize=2, linestyle='None',
+                 marker='o', markersize=.5, linestyle='None',
                  label=file, color=colors(i))
 
     except Exception as e:
