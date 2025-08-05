@@ -40,7 +40,7 @@ if __name__ == "__main__":
             ].astype(float)
 
             plt.plot(df_xz['Position X'], df_xz['Position Z'],
-                     marker='o', markersize=0.5, linestyle='None',
+                     marker='o', markersize=0.5, linestyle='--',
                      label=file, color=colors[i])
 
         except Exception as e:
