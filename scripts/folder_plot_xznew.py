@@ -47,8 +47,8 @@ if __name__ == "__main__":
             print(f"Skipping {file}: {e}")
 
     # Finalize plot
-    plt.xlabel('Position X (m)')
-    plt.ylabel('Position Z (m)')
+    plt.xlabel('Position X (cm)')
+    plt.ylabel('Position Z (cm)')
     plt.title('2D Flight Paths (X vs Z)')
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
     plt.axis('equal')
