@@ -149,6 +149,21 @@ def t1_t4(scf):
 
         print("Landing...")
 
+def t1_t3(scf):
+    with MotionCommander(scf, default_height=DEFAULT_HEIGHT) as mc:
+        print("Taking off...")
+        time.sleep(2.0)
+
+        # Reset estimated position to (0, 0)
+        scf.cf.param.set_value('kalman.resetEstimation', '1')
+        time.sleep(0.1)
+        scf.cf.param.set_value('kalman.resetEstimation', '0')
+        time.sleep(2.0)
+
+        move_to_position(mc, 1.0, 0.0)
+
+        print("Landing...")
+
 def take_off_simple(scf):
     with MotionCommander(scf, default_height=DEFAULT_HEIGHT) as mc:
         print("Taking off and hovering...")

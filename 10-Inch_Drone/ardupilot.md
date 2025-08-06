@@ -60,3 +60,8 @@ disarm throttle
 
 ![alt text](image.png)
 
+https://ardupilot.org/dev/docs/raspberry-pi-via-mavlink.html
+
+https://www.docs.rpanion.com/software/rpanion-server
+
+https://mavlink.io/en/mavgen_python/
