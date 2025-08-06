@@ -27,7 +27,7 @@ may need to connect to a non 5g netwrok
 
 had to do a lot of work around.
 used the monitor and enabled ssh
-ping 100.65.46.38
+
 can not ssh normally i must use ssh pi@100.65.46.38
 username-pi
 password-pi
