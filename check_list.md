@@ -9,7 +9,6 @@
 - [ ] find video of dongle being used
 https://www.youtube.com/watch?v=_Ri3C4jhvp0
 - [x] test mocap dongle
-- [x] contacted nate
 - [ ] 10-inch drone takeoff test
 - [ ] 20% test
 - [x] check osd works 
