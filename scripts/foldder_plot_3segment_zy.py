@@ -44,7 +44,7 @@ plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)  # Lege
 plt.tight_layout()
 
 # Save as PDF
-plt.savefig("C:/Users/Rikar/git-repos/Aerospace-Robotics-Hardware/plots/plot.pdf",
+plt.savefig("C:/Users/Rikar/git-repos/Aerospace-Robotics-Hardware/plots/plot2.pdf",
             format='pdf', bbox_inches='tight', dpi=300)
 
 plt.show()
