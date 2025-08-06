@@ -27,17 +27,17 @@ for file in csv_files:
         segment3 = segment3.apply(pd.to_numeric, errors='coerce').dropna()
 
         # Plot
-        plt.plot(segment1['Position'], segment1['Position.2'], label=f'{file}', marker='o', markersize=.5, linestyle='None')
-        plt.plot(segment2['Position.15'], segment2['Position.17'], label=f'{file}', marker='o', markersize=.5, linestyle='None')
-        plt.plot(segment3['Position'], segment3['Position.2'], label=f'{file}', marker='o', markersize=.5, linestyle='None')
+        plt.plot(segment1['Position'], segment1['Position.2'], label=f'{file}', marker='o', markersize=.5, linestyle='--')
+        plt.plot(segment2['Position.15'], segment2['Position.17'], label=f'{file}', marker='o', markersize=.5, linestyle='--')
+        plt.plot(segment3['Position'], segment3['Position.2'], label=f'{file}', marker='o', markersize=.5, linestyle='--')
 
     except Exception as e:
         print(f"Skipping {file}: {e}")
 
 # Finalize plot
-plt.xlabel('Position Z (mm)')
-plt.ylabel('Position Y (mm)')
-plt.title('2D Trajectories for 3 Segments of Follower Arm')
+plt.xlabel('Position x (cm)')
+plt.ylabel('Position z (cm)')
+plt.title('2D Trajectory of Crazyflie')
 plt.axis('equal')
 plt.grid(True)
 plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)  # Legend to the right
