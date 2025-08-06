@@ -27,9 +27,9 @@ for file in csv_files:
         segment3 = segment3.apply(pd.to_numeric, errors='coerce').dropna()
 
         # Plot
-        plt.plot(segment1['Position'], segment1['Position.2'], label=f'{file} - segment 1', marker='o', markersize=.5, linestyle='None')
-        plt.plot(segment2['Position.15'], segment2['Position.17'], label=f'{file} - segment 2', marker='o', markersize=.5, linestyle='None')
-        plt.plot(segment3['Position'], segment3['Position.2'], label=f'{file} - segment 3', marker='o', markersize=.5, linestyle='None')
+        plt.plot(segment1['Position'], segment1['Position.2'], label=f'{file}, marker='o', markersize=.5, linestyle='None')
+        plt.plot(segment2['Position.15'], segment2['Position.17'], label=f'{file}, marker='o', markersize=.5, linestyle='None')
+        plt.plot(segment3['Position'], segment3['Position.2'], label=f'{file}, marker='o', markersize=.5, linestyle='None')
 
     except Exception as e:
         print(f"Skipping {file}: {e}")
