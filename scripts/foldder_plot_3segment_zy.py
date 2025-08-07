@@ -41,6 +41,10 @@ plt.title('2D Trajectory of Crazyflie')
 plt.axis('equal')
 plt.grid(True)
 plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)  # Legend to the right
+
+plt.xlim(-150, 50)   # Adjust these as needed
+plt.ylim(-50, 200)  
+
 plt.tight_layout()
 
 # Save as PDF
