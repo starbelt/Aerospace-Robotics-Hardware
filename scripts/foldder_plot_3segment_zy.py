@@ -28,7 +28,7 @@ for file in csv_files:
 
         # Plot
         plt.plot(segment1['Position'], segment1['Position.2'], label=f'{file}', marker='o', markersize=.5, linestyle='--')
-        plt.plot(segment2['Position.15'], segment2['Position.17'], marker='o', markersize=.5, linestyle='--')
+        #plt.plot(segment2['Position.15'], segment2['Position.17'], marker='o', markersize=.5, linestyle='--')
         #plt.plot(segment3['Position'], segment3['Position.2'], marker='o', markersize=.5, linestyle='--')
 
     except Exception as e:
@@ -46,8 +46,5 @@ plt.ylim(-50, 200)
 
 plt.tight_layout()
 
-# Save as PDF
-plt.savefig("C:/Users/Rikar/git-repos/Aerospace-Robotics-Hardware/plots/plot.pdf",
-            format='pdf', bbox_inches='tight', dpi=300)
 
 plt.show()
