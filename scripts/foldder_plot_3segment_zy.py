@@ -9,6 +9,7 @@ if len(sys.argv) != 2:
 
 folder_path = sys.argv[1]
 csv_files = [f for f in os.listdir(folder_path) if f.endswith('.csv')]
+cmap = plt.cm.get_cmap('nipy_spectral', len(csv_files))
 
 plt.figure(figsize=(10, 8))
 
