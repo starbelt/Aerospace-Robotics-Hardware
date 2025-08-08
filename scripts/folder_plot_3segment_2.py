@@ -26,7 +26,7 @@ for file in csv_files:
         segment2 = segment2.apply(pd.to_numeric, errors='coerce').dropna()
         segment3 = segment3.apply(pd.to_numeric, errors='coerce').dropna()
 
-        # 👇 Extract traj number from filename
+        #  Extract traj number from filename
         traj_num = int(''.join(filter(str.isdigit, file.replace('crazyflie_traj', '').replace('.csv', ''))))
         color = 'red' if traj_num <= 6 else 'blue'
 
@@ -43,7 +43,7 @@ plt.ylabel('Position z (cm)')
 plt.title('2D Trajectory of Crazyflie')
 plt.grid(True)
 plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
-plt.xlim(-150, 50)
+plt.xlim(-200, 50)
 plt.ylim(-50, 200)
 plt.tight_layout()
 plt.show()
