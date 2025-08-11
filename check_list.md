@@ -2,15 +2,17 @@
 - [x] 30 runs with crazyflie traj t1-t4
 - [ ] 30 runs with 10-inch drone t1-t4
 - [ ] buck converter tests
-- [ ] make system design slide
-- [ ] make first redult slide
-- [ ] make second result slide
-- [ ] make third result slide
-- [ ] find video of dongle being used
+- [x] make system design slide
+- [x] make first redult slide
+- [x] make second result slide
+- [x] make third result slide
+- [x] find video of dongle being used
 https://www.youtube.com/watch?v=_Ri3C4jhvp0
 - [x] test mocap dongle
 - [ ] 10-inch drone takeoff test
 - [ ] 20% test
 - [x] check osd works 
-- "works"
-- replaced cable in mocap room
+- [ ] fix slides
+- [ ] contact optitrack
+- [ ] sign up for class
+
