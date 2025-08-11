@@ -8,7 +8,6 @@ from cflib.crazyflie.syncCrazyflie import SyncCrazyflie
 from cflib.utils import uri_helper
 from cflib.utils.reset_estimator import reset_estimator
 
-# === CONFIG ===
 uri = uri_helper.uri_from_env(default='radio://0/80/2M')
 host_name = '172.30.224.1'
 mocap_system_type = 'optitrack_closed_source'
@@ -16,7 +15,6 @@ rigid_body_name = 'cf'
 send_full_pose = True
 orientation_std_dev = 8.0e-3
 
-# === MOTION CAPTURE WRAPPER ===
 class MocapWrapper(Thread):
     def __init__(self, body_name):
         Thread.__init__(self)
@@ -43,7 +41,6 @@ def send_extpose_quat(cf, x, y, z, quat):
     else:
         cf.extpos.send_extpos(x, y, z)
 
-# === SETUP ===
 def activate_kalman_estimator(cf):
     cf.param.set_value('stabilizer.estimator', '2')
     cf.param.set_value('locSrv.extQuatStdDev', orientation_std_dev)
@@ -65,7 +62,6 @@ def run_single_waypoint(cf):
 
     hl.stop()
 
-# === MAIN ===
 if __name__ == '__main__':
     cflib.crtp.init_drivers()
 
