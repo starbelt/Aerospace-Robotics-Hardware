@@ -15,7 +15,8 @@ https://www.youtube.com/watch?v=_Ri3C4jhvp0
 - [x] fix slides
 - [ ] contact optitrack
 - [x] sign up for class
-- [ ] add text between mocap slides
+- [ ] add text between mocap file
+- added text to half the file
 - [ ] explain lerobot plots
 - [ ] explain crazyflie plots
 - [x] requested the fuses
