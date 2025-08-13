@@ -12,7 +12,10 @@ https://www.youtube.com/watch?v=_Ri3C4jhvp0
 - [ ] 10-inch drone takeoff test
 - [ ] 20% test
 - [x] check osd works 
-- [ ] fix slides
+- [x] fix slides
 - [ ] contact optitrack
-- [ ] sign up for class
-
+- [x] sign up for class
+- [ ] add text between mocap slides
+- [ ] explain lerobot plots
+- [ ] explain crazyflie plots
+- [x] requested the fuses

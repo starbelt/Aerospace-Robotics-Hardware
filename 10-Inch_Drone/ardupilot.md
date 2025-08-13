@@ -28,6 +28,7 @@ may need to connect to a non 5g netwrok
 had to do a lot of work around.
 used the monitor and enabled ssh
 
+ping 100.65.46.38
 can not ssh normally i must use ssh pi@100.65.46.38
 username-pi
 password-pi
@@ -65,3 +66,6 @@ https://ardupilot.org/dev/docs/raspberry-pi-via-mavlink.html
 https://www.docs.rpanion.com/software/rpanion-server
 
 https://mavlink.io/en/mavgen_python/
+
+non_gps guided flight
+https://ardupilot.org/copter/docs/common-non-gps-to-gps.html
