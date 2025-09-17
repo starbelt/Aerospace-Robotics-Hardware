@@ -49,7 +49,7 @@ host_name = '172.30.224.1'
 
 # The type of the mocap system
 # Valid options are: 'vicon', 'optitrack', 'optitrack_closed_source', 'qualisys', 'nokov', 'vrpn', 'motionanalysis'
-mocap_system_type = 'optitrack_closed_source'
+mocap_system_type = 'optitrack'
 
 # The name of the rigid body that represents the Crazyflie
 rigid_body_name = 'cf'
