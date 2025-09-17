@@ -22,6 +22,8 @@ Press the calculate button and wait for it to finish. A window should pop up wit
 After calibrating the cameras the last step is to set the origin. There is a small tape x in the center of the room. Take the origin and place it with z facing the operators table and x facing towards the wall. Once you have done that go to your computer and press "set plane". You can remove the origin afterwards.  
 ![Mocap setup step 7](Images/mocap_setup7.jpg)
 ## Data Collection
+You can collect data of a single or multiple rigid bodies using the motion capture room. Place at least 3 markers on the rigid body you want to track. The markers must not be placed in areas where they may move relative to eachother. They should also be placed asymmetrically. 
+![data collection step 7](Images/crazyflie_with_markers.jpg)
 ![data collection step 1](Images/data_collection1.png)
 ![data collection step 2](Images/data_collection2.png)
 ![data collection step 3](Images/data_collection3.png)

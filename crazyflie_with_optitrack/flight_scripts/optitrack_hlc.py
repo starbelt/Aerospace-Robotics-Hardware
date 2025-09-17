@@ -53,7 +53,7 @@ def run_single_waypoint(cf):
     time.sleep(3.0)
 
     print("Going to waypoint...")
-    hl.go_to(0.0, 0.0, 0.5, 0, 3.0)  # x, y, z, yaw
+    hl.go_to(0.0, 0.0, 0.5, 0, 3.0)  
     time.sleep(4.0)
 
     print("Landing...")
