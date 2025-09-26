@@ -10,7 +10,7 @@ from cflib.utils.reset_estimator import reset_estimator
 
 uri = uri_helper.uri_from_env(default='radio://0/80/2M')
 host_name = '172.30.224.1'
-mocap_system_type = 'optitrack_closed_source'
+mocap_system_type = 'vrpn'
 rigid_body_name = 'cf'
 send_full_pose = True
 orientation_std_dev = 8.0e-3

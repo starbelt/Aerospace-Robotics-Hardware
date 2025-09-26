@@ -42,14 +42,14 @@ from cflib.utils import uri_helper
 from cflib.utils.reset_estimator import reset_estimator
 
 # URI to the Crazyflie to connect to
-uri = uri_helper.uri_from_env(default='radio://0/80/2M')
+uri = uri_helper.uri_from_env(default='radio://0/78/1M/E7E7E7E7E6')
 
 # The host name or ip address of the mocap system
 host_name = '172.30.224.1'
 
 # The type of the mocap system
 # Valid options are: 'vicon', 'optitrack', 'optitrack_closed_source', 'qualisys', 'nokov', 'vrpn', 'motionanalysis'
-mocap_system_type = 'optitrack'
+mocap_system_type = 'vrpn'
 
 # The name of the rigid body that represents the Crazyflie
 rigid_body_name = 'cf'
@@ -97,7 +97,7 @@ class MocapWrapper(Thread):
                 if name == self.body_name:
                     if self.on_pose:
                         pos = obj.position
-                        self.on_pose([pos[0], pos[1], pos[2], obj.rotation])
+                        self.on_pose([pos[2], pos[0], pos[1], obj.rotation])
 
 
 def send_extpose_quat(cf, x, y, z, quat):
