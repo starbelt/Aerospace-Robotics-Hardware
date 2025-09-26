@@ -32,14 +32,15 @@ df_xz = df_xz.astype(float)
 # Plotting X vs Z
 plt.figure(figsize=(8, 6))
 plt.plot(df_xz['Position X'], df_xz['Position Z'], marker='o', markersize=2, linestyle='None')
-plt.xlabel('Position X (meters)')
-plt.ylabel('Position Z (meters)')
+plt.xlabel('Position X (centimeters)')
+plt.ylabel('Position Z (centimeters)')
 plt.title('2D Flight Path (X vs Z)')
 plt.grid(True)
 plt.axis('equal')  # keeps aspect ratio square
 plt.tight_layout()
 
 plt.savefig("C:/Users/Rikar/git-repos/Aerospace-Robotics-Hardware/plots/plot.pdf", format='pdf', bbox_inches='tight', dpi=300)
-
+plt.xlim(-50, 50)   # example: from –50 to 200 cm
+plt.ylim(-50, 50)
 plt.show()
 
