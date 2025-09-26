@@ -19,7 +19,7 @@ else:
 df = pd.read_csv(data_file, skiprows=5)
 
 # Extract the Time, Position X, and Position Z columns
-df_xy = df[['Unnamed: 1', 'Position.2', 'Position']].copy()
+df_xz = df[['Unnamed: 1', 'Position.2', 'Position']].copy()
 df_xz.columns = ['Time (s)', 'Position X', 'Position Z']
 
 # Clean the data: drop missing and non-numeric values
