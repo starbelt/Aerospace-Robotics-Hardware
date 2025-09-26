@@ -32,8 +32,8 @@ df_xy = df_xy.astype(float)
 # Plotting X vs Y
 plt.figure(figsize=(8, 6))
 plt.plot(df_xy['Position X'], df_xy['Position Y'], marker='o', markersize=2, linestyle='None')
-plt.xlabel('Position X (meters)')
-plt.ylabel('Position Y (meters)')
+plt.xlabel('Position X (Centimeters)')
+plt.ylabel('Position Y (Centimeters)')
 plt.title('2D Flight Path (X vs Y)')
 plt.grid(True)
 plt.axis('equal')  # keeps aspect ratio square
