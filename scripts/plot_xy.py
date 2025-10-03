@@ -30,7 +30,7 @@ df_xy = df_xy[pd.to_numeric(df_xy['Position Y'], errors='coerce').notnull()]
 df_xy = df_xy.astype(float)
 
 # Plotting X vs Y
-plt.figure(figsize=(8, 6))
+plt.figure(figsize=(4, 6))
 plt.plot(df_xy['Position X'], df_xy['Position Y'], marker='o', markersize=2, linestyle='None')
 plt.xlabel('Position X (Centimeters)')
 plt.ylabel('Position Y (Centimeters)')
