@@ -30,7 +30,7 @@ df_xz = df_xz[pd.to_numeric(df_xz['Position Z'], errors='coerce').notnull()]
 df_xz = df_xz.astype(float)
 
 # Plotting X vs Z
-plt.figure(figsize=(8, 6))
+plt.figure(figsize=(4, 6))
 plt.plot(df_xz['Position X'], df_xz['Position Z'], marker='o', markersize=2, linestyle='None')
 plt.xlabel('Position X (centimeters)')
 plt.ylabel('Position Z (centimeters)')
