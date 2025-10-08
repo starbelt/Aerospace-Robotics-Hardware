@@ -35,3 +35,5 @@ I needed to redownload the SDK manager again, so I followed the same steps as be
 Once you run that, you should see a welcome message. You will be prompted to choose a login type, choose the developer login. You will see a QR code, once you scan it, you can log in on your phone, and it will automatically log you in on the computer. After that, you can choose install for the action, Jetson for the product, Ubuntu as the system configuration, Jetson Orin NX Modules for target hardware, and Linux for the operating system.
 
 At this point, I ran into a problem as the version of Ubuntu I downloaded is not supported. I believe this will be a simple fix by downloading a different version of Ubuntu. 
+
+https://medium.com/@fixitblog/solved-linux-doesn-39-t-save-changes-7a0ea7075011
