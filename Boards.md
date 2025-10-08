@@ -35,7 +35,7 @@ Initially, I set the bench power supply to output 20V at .2 Amps. Once I confirm
 22.2v at .2 amps  18.01v
 
 25.2v at .2 amps  18.02v
-<br> 
+<br> <br> 
 
 19.8v at 2 amps  18.01v
 
@@ -44,7 +44,7 @@ Initially, I set the bench power supply to output 20V at .2 Amps. Once I confirm
 22.2v at 2 amps  18.01v
 
 25.2v at 2 amps  18.02v
-<br>
+<br> <br> 
 
 19.8v at 3 amps  18.01v
 
