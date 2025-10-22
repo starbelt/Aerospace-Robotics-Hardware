@@ -55,5 +55,48 @@ Initially, I set the bench power supply to output 20V at .2 Amps. Once I confirm
 25.2v at 3 amps  18.02v
 
 
+5 10 80 90
+
+2 of each
+find from same compamy
+
+Second test using resitors 
+
+19.8v at .2 amps  
+
+21.6v at .2 amps  
+
+22.2v at .2 amps  
+
+25.2v at .2 amps  
+<br> <br> 
+
+19.8v at 2 amps  
+
+21.6v at 2 amps  
+
+22.2v at 2 amps  
+
+25.2v at 2 amps  
+<br> <br> 
+
+19.8v at 3 amps  
+
+21.6v at 3 amps  
+
+22.2v at 3 amps 
+
+25.2v at 3 amps  
+<br> <br> 
+
+19.8v at 4 amps  
+
+21.6v at 4 amps  
+
+22.2v at 4 amps  
+
+25.2v at 4 amps 100w 91ohm  18.04v .197amps 3.5538w
 
 
+![alt text](image-5.png)
+![alt text](image-4.png)

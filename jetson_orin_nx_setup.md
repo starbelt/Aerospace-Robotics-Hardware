@@ -37,3 +37,44 @@ Once you run that, you should see a welcome message. You will be prompted to cho
 At this point, I ran into a problem as the version of Ubuntu I downloaded is not supported. I believe this will be a simple fix by downloading a different version of Ubuntu.   
 <br>
 https://medium.com/@fixitblog/solved-linux-doesn-39-t-save-changes-7a0ea7075011
+
+
+<br><br>
+
+
+
+When using a carrier board that is not the standard board included in the devkit, the sdkmanager can not be used to flash the nx. You must manually flash the module following the guide provided by your carrier board manufacturer. In our case we are using a Connect Tech Boson22 for orin. Thus I will follow the guide provided by Connect Tech.  
+
+https://connecttech.com/ftp/Drivers/L4T-Release-Notes/Jetson-Orin-NX-Orin-Nano/ORIN_NX_NANO-36.4.4.pdf  
+  
+
+The guide provides instructions on how to install the needed BSP and flash the module.
+
+It also refrences another guide for downloading and installing needed portions from the sdk manager  
+
+possible problems:
+Board is not in force recovery mode
+   - I refrenced the boson22 for orin manual to put it into force recovery mode
+   - by using lsusb you can check if the module is in force recovery
+
+Not using a proper data cable:
+    -I switched known data cable (cable used for robot arms)
+
+storage may be too full:
+    -You can check storgae with df -h
+If you moved filed to trash they may not actually be deleted. If items that you deleted are still taking up space you can use `sudo rm -rf ~/.local/share/Trash/*`
+
+
+attempted solutions-  
+swithced usb cable  
+switched jetpack version  
+flashed as nano is supermode  
+switched to server  
+sudo apt install nfs-kernel-server -y   
+
+potentially powersupply issue  
+
+ 
+flashed to emmc  
+used sudo ./cti-nvme-flash.sh cti/orin-nx/boson22-orin/base nvme0n1p1  
+![alt text](image-2.png)  
