@@ -57,9 +57,8 @@ arm throttle
 
 disarm throttle
 
-![alt text](image-1.png)
-
-![alt text](image.png)
+![alt text](Images/image-1.png)
+![alt text](Images/image.png)
 
 https://ardupilot.org/dev/docs/raspberry-pi-via-mavlink.html
 
