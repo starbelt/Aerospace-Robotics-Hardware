@@ -98,5 +98,5 @@ Second test using resitors
 25.2v at 4 amps 100w 91ohm  18.04v .197amps 3.5538w
 
 
-![alt text](image-5.png)
-![alt text](image-4.png)
+![alt text](Images/image-5.png)
+![alt text](Images/image-4.png)

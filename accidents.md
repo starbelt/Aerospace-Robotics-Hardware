@@ -26,8 +26,8 @@ In order to test the buck converter with a load I attached a resistors of differ
 On the website it states its rated for 100 Watts. However, if you look into the data sheet it specifies thats the rated power with a heatsink.Without a heatsink the resistors are only rated for 3.5 Watts. This was fine for the previous resistors as the power dissipated was close to 3.5 Watts.   
 
 I also double checked to make sure it was a 10 ohm resistor using the multimeter. 
-![alt text](image-6.png)
-![alt text](image-7.png)
+![alt text](Images/image-6.png)
+![alt text](Images/image-7.png)
 
-![alt text](image-11.png)
-![alt text](image-10.png)
+![alt text](Images/image-11.png)
+![alt text](Images/image-10.png)

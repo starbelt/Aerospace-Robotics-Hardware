@@ -27,7 +27,7 @@ By connecting the drone to my computer with a usb c cable, I could start setting
 <br><br>
 
 Within the motor tab of the BetaFlight configurator, it contains a graph that shows various information about the drone. It shows the degrees per second that the drone is rotating around each axis. The X represents roll, the Y represents pitch, and the Z represents yaw. It can be scaled to be as small as -1 to 1 degrees per second, to as large as -2000 to 2000 degrees per second. Below the graph, there is additional information. It includes the total real-time voltage of the battery, the real-time amperage that is being drawn from the battery, as well as the total milliamp hours drawn from the battery from the time of connection. Below these labels, there are columns for each motor. You can see the Pulse Width Modulation signal being sent to each motor. 1000 represents 1000µs, and it is the minimum possible value with the motors at rest. It goes up to 2000, which represents 2000µs, and it is the max setting for the motors. Each motor can be controlled separately with the respective slider, or they can all be controlled at once with the master slider. There is also an R and T, which denote the RPM and temperature of the motors, respectively.    
-![10inch drone stage1](Images/10inch_drone_stage8.jpg)
+![10inch drone stage1](Images/10inch_drone_stage8.png)
 <br><br>
 
 I detached the propellers for safety and began to set up the software for the flight controller. I configured the motors to spin the correct way, as well as settings for the transmitter and camera.   

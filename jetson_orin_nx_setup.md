@@ -77,14 +77,14 @@ potentially powersupply issue
  
 flashed to emmc  
 used sudo ./cti-nvme-flash.sh cti/orin-nx/boson22-orin/base nvme0n1p1  
-![alt text](image-2.png)  
+![alt text](Images/image-2.png)  
 
-![alt text](image-15.png)
-![alt text](image-16.png)
-![alt text](image-20.png)
+![alt text](Images/image-15.png)
+![alt text](Images/image-16.png)
+![alt text](Images/image-20.png)
 
-![alt text](image-17.png)
+![alt text](Images/image-17.png)
 
-![alt text](image-18.png)
+![alt text]Images/(image-18.png)
 
-![alt text](image-19.png)
+![alt text](Images/image-19.png)
